@@ -1,0 +1,88 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}About Us - Apstronic Technology{% endblock %}
+{% block content %}
+
+<div class="container py-5">
+
+    <!-- 1. Header -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">About Apstronic Technology</h1>
+        <p class="lead text-muted">Innovating Smart, Sustainable & Connected Solutions</p>
+    </div>
+
+    <!-- 2. Company Introduction -->
+    <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+            <img src="{% static 'main/images/company.jpg' %}" class="img-fluid rounded shadow" alt="Company Image">
+        </div>
+        <div class="col-md-6">
+            <h4 class="fw-bold">Who We Are</h4>
+            <p>
+                Apstronic Technology is an innovation-driven company specializing in embedded systems, IoT, UAVs, and smart infrastructure solutions. We are a team of passionate engineers, researchers, and developers working together to solve real-world problems with technology that is smart, scalable, and sustainable.
+            </p>
+        </div>
+    </div>
+
+    <!-- 3. Mission and Vision -->
+    <div class="row text-center mb-5">
+        <div class="col-md-6">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h5 class="fw-bold">Our Vision</h5>
+                <p>To be a global leader in creating cutting-edge technologies for a better and more connected world.</p>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="p-4 bg-light rounded shadow-sm h-100">
+                <h5 class="fw-bold">Our Mission</h5>
+                <p>To deliver high-quality, innovative, and sustainable technology solutions tailored for real-world needs.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Why Choose Us -->
+    <div class="bg-white border rounded shadow-sm p-4 mb-5">
+        <h4 class="mb-3 text-center">Why Choose Us</h4>
+        <ul class="list-unstyled">
+            <li>✅ Deep expertise in Embedded Systems, IoT, UAVs, and Automation</li>
+            <li>✅ Custom end-to-end product development</li>
+            <li>✅ Agile, research-oriented, and client-focused approach</li>
+            <li>✅ Solutions tested through field trials and real-time deployment</li>
+        </ul>
+    </div>
+
+    <!-- 5. Our Domains -->
+    <div class="mb-5">
+        <h4 class="text-center mb-4">Our Major Domains</h4>
+        <div class="accordion" id="domainAccordion">
+            {% comment %} Replace this section with the accordion HTML from the previous response if needed {% endcomment %}
+            <!-- Example -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingIoT">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIoT">
+                        Internet of Things (IoT)
+                    </button>
+                </h2>
+                <div id="collapseIoT" class="accordion-collapse collapse" data-bs-parent="#domainAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Wireless sensor networks (Wi-Fi, LoRa, BLE)</li>
+                            <li>Cloud-based monitoring and control</li>
+                            <li>Remote diagnostics and data logging</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Add the rest of the 8 domains like this -->
+        </div>
+    </div>
+
+    <!-- Optional: CTA -->
+    <div class="text-center bg-light p-4 rounded">
+        <h5>Want to collaborate with us?</h5>
+        <a href="{% url 'contact' %}" class="btn btn-primary mt-2">Get in Touch</a>
+    </div>
+
+</div>
+
+{% endblock %}
