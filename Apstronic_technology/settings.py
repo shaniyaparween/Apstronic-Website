@@ -33,7 +33,9 @@ SECRET_KEY = 'django-insecure-0_2kehz#^h+erg(3=vm3dw243xuo4&6q20&slh*bd4d7$u9gfc
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['apstronic.onrender.com']
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'apstronic.onrender.com']
+
 
 
 
@@ -51,6 +53,9 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this line here
+    # ... rest of your middleware ...
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -112,6 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Internationalization
@@ -136,7 +142,7 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
+
 
 # --------------------
 # STATIC FILES (CSS, JS, Images)
