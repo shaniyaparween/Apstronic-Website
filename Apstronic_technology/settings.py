@@ -129,15 +129,35 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import os
+
+# --------------------
+# STATIC FILES (CSS, JS, Images)
+# --------------------
 STATIC_URL = '/static/'
 
+# This is the folder where Django looks for static files during development
 STATICFILES_DIRS = [
-    BASE_DIR / "main" / "static",
+    os.path.join(BASE_DIR, 'main', 'static'),  # ✅ only this if using app-level static
 ]
+
+# This is where all static files will be collected for production (Render will use this)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# --------------------
+# MEDIA FILES (User-uploaded content)
+# --------------------
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+
+
