@@ -32,7 +32,9 @@ SECRET_KEY = 'django-insecure-0_2kehz#^h+erg(3=vm3dw243xuo4&6q20&slh*bd4d7$u9gfc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['apstronic.onrender.com', 'www.apstronic.onrender.com']
+
 
 
 # Application definition
