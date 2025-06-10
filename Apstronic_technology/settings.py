@@ -30,7 +30,7 @@ TEMPLATES_MAIN_DIRS=os.path.join(BASE_DIR,"main","templates","main")
 SECRET_KEY = 'django-insecure-0_2kehz#^h+erg(3=vm3dw243xuo4&6q20&slh*bd4d7$u9gfc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 
@@ -162,6 +162,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # --------------------
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if not DEBUG:
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
